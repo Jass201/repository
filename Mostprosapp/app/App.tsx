@@ -30,9 +30,9 @@ import ProfilePrivacy from "./(Components)/Profile/ProfilePrivacy";
 import ProfileAbout from "./(Components)/Profile/ProfileAbout";
 import { NavigationContainer, RouteProp } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Amplify } from "aws-amplify";
-import awsconfig from "./aws-exports";
-Amplify.configure(awsconfig);
+// import { Amplify } from "aws-amplify";
+// import awsconfig from "./aws-exports.js";
+// Amplify.configure(awsconfig);
 import { RootStackParamList } from "./types";
 
 const App = () => {

@@ -29,18 +29,10 @@
             },
             "authenticationType": "API_KEY"
           }
-        },
-        "GraphQLAPIIdOutput": "mhvzbdgzozek3mc6rcbbzsekva",
-        "GraphQLAPIEndpointOutput": "https://ho6kkhhvxfgdvji67tvowm5c7e.appsync-api.eu-north-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-wju2k7sfx5eidftruixdyftqaq"
+        }
       },
       "providerPlugin": "awscloudformation",
-      "service": "AppSync",
-      "lastPushTimeStamp": "2024-02-19T11:19:15.476Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify61e2a13204214-staging-150051-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apimostpros"
-      }
+      "service": "AppSync"
     }
   },
   "auth": {
@@ -53,8 +45,8 @@
           "SMS"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 6,
-          "passwordPolicyCharacters": []
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 6
         },
         "signupAttributes": [
           "EMAIL",
@@ -70,22 +62,7 @@
         ]
       },
       "providerPlugin": "awscloudformation",
-      "service": "Cognito",
-      "output": {
-        "CreatedSNSRole": "arn:aws:iam::246293866149:role/snsbcd2e800150051-staging",
-        "UserPoolId": "eu-north-1_jR5BGgTBj",
-        "AppClientIDWeb": "vv59bjq5ab0kkjgm33olhfjch",
-        "AppClientID": "39bepbsp0o2n3390lfro3qtqfs",
-        "IdentityPoolId": "eu-north-1:8cca2e91-23d8-4da9-88e1-ff5c4916aeae",
-        "UserPoolArn": "arn:aws:cognito-idp:eu-north-1:246293866149:userpool/eu-north-1_jR5BGgTBj",
-        "IdentityPoolName": "testAuthIdentityPool__staging",
-        "UserPoolName": "Mostpros"
-      },
-      "lastPushTimeStamp": "2024-02-19T11:19:15.484Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify61e2a13204214-staging-150051-deployment/amplify-cfn-templates/auth/Mostpros-cloudformation-template.json",
-        "logicalId": "authMostpros"
-      }
+      "service": "Cognito"
     }
   }
 }
