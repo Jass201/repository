@@ -1,0 +1,23 @@
+#main-con {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin: 0px 450px 10px 0px;
+}
+
+#sidebar-con {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  align-items: flex-end;
+}
+
+.settings-upper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 100px 0px 0px 480px;
+  width: 300px;
+  font-size: 15px;
+  padding-bottom: 30px;
+}

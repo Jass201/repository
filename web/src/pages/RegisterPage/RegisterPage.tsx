@@ -1,28 +1,26 @@
-import { useState } from 'react';
-import { Auth } from 'aws-amplify';
-import NavBar from '../../components/ui/NavBar/NavBar';
-import { RegisterForm } from '../../components/MultistepForm/RegisterForm';
-import Footer from '../../components/ui/Footer/Footer';
-import { useNavigate } from 'react-router-dom';
-import './RegisterPage.css';
+import { useState } from "react";
+import { Auth } from "aws-amplify";
+import NavBar from "../../components/ui/NavBar/NavBar";
+import { RegisterForm } from "../../components/MultistepForm/RegisterForm";
+import Footer from "../../components/ui/Footer/Footer";
+import { useNavigate } from "react-router-dom";
+import "./RegisterPage.css";
 import { dynamo } from "./../../../../backend_functions/declarations.ts";
 import { stopXSS } from "./../../../../backend_functions/stopXSS.ts";
 
-
 function RegisterPage() {
-
   const [registerData, setRegisterData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    password: '',
-    repeatPassword: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    repeatPassword: "",
   });
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   interface RegisterData {
     firstName: string;
@@ -36,7 +34,6 @@ function RegisterPage() {
   function signUp(registerData: RegisterData): void {
     const { email, phoneNumber, password, firstName, lastName } = registerData;
 
-
     const signUpUser = async () => {
       try {
         await Auth.signUp({
@@ -49,7 +46,6 @@ function RegisterPage() {
           },
           autoSignIn: { enabled: true },
         });
-
 
         dynamo
           .put({
@@ -65,9 +61,8 @@ function RegisterPage() {
             TableName: "users",
           })
           .promise()
-          .then(data => console.log(data.Attributes))
-          .catch(console.error)
-
+          .then((data) => console.log(data.Attributes))
+          .catch(console.error);
 
         /*const user = await Auth.signIn(email, password);
         sessionStorage.setItem('accessToken', user.signInUserSession.accessToken.jwtToken);
@@ -75,16 +70,19 @@ function RegisterPage() {
         sessionStorage.setItem('refreshToken', user.signInUserSession.refreshToken.token);
       */
         //const postConfig = postConfigMap['HOMEOWNER'];
-        navigate('/bevestig-email', { state: { email: email, postConfig: "HOMEOWNER" } })
-      } catch (error: any) {
-        console.error('Error signing up:', error);
-        setError(error.message || 'Er is een fout opgetreden bij het aanmelden.');
+        navigate("/bevestig-email", {
+          state: { email: email, postConfig: "HOMEOWNER" },
+        });
+      } catch (error) {
+        console.error("Error signing up:", error);
+        setError(
+          error.message || "Er is een fout opgetreden bij het aanmelden."
+        );
       }
     };
 
     signUpUser();
   }
-
 
   const handleSignUp = async () => {
     signUp(registerData);
@@ -100,14 +98,19 @@ function RegisterPage() {
       <NavBar />
       <div className="registerForm_wrapper">
         <div className="registerForm_con">
-
           <RegisterForm {...registerData} updateFields={updateRegisterData} setError={setError} error={error}/>
 
-          <RegisterForm setUserExists={undefined} {...registerData} updateFields={updateRegisterData} /*setError={setError}*/ error={error} />
-          <button className="button-sign-up" onClick={handleSignUp}>Sign Up</button>
+          <RegisterForm
+            setUserExists={undefined}
+            {...registerData}
+            updateFields={updateRegisterData}
+            /*setError={setError}*/ error={error}
+          />
+          <button className="button-sign-up" onClick={handleSignUp}>
+            Sign Up
+          </button>
         </div>
       </div>
-
     </>
   );
 }

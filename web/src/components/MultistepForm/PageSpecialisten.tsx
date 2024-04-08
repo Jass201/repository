@@ -3,7 +3,6 @@ import './PageSpecialisten.css';
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { dynamo } from "../../../../backend_functions/declarations";
-
 const exampleSpecialists = [
   {
     id: 1,
@@ -33,26 +32,21 @@ const exampleSpecialists = [
     bio: 'Ik werk in en om de omgeving van Amsterdam. Voor hoge kwaliteit werk moet je bij mij zijn.',
   },
 ];
-
 const PageSpecialisten = (updateDate, /*{ date }*/) => {
   const [location, setLocation] = useState('');
   const [sortBy, setSortBy] = useState('');
   const [priceFrom, setPriceFrom] = useState('');
-
   const applyFilters = () => {
     let filteredSpecialists = specialists;
-
     //console.log("hello:  ", filteredSpecialists);
     // Filter by location
     if (location) {
       filteredSpecialists = filteredSpecialists.filter(specialist => specialist.location.toLowerCase() === location);
     }
-
     // Filter by price
     if (priceFrom) {
       filteredSpecialists = filteredSpecialists.filter(specialist => specialist.price >= parseInt(priceFrom));
     }
-
     // Sort by criteria
     if (sortBy) {
       if (sortBy === 'priceLowHigh') {
@@ -63,45 +57,28 @@ const PageSpecialisten = (updateDate, /*{ date }*/) => {
         filteredSpecialists.sort((a, b) => b.rating - a.rating);
       }
     }
-
     setSpecialists(filteredSpecialists);
   };
-
   useEffect(() => {
     // This function will be called automatically whenever location, sortBy, or priceFrom changes.
     applyFilters();
   }, [location, sortBy, priceFrom, applyFilters]); // These are the dependencies for the effect.
-
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
   };
-
   const handleSortByChange = (event) => {
     setSortBy(event.target.value);
   };
-
   /*const handlePriceFromChange = (event) => {
     setPriceFrom(event.target.value);
   };*/
-
   const [specialists, setSpecialists] = useState(exampleSpecialists);
-
-
-
-
-
   //make a function to grab data behind the hashtag in the url and print it into the console
-
-
-
   //backend niet verwijderen
   useEffect(() => {
     let professionals: any[] = [];
-
     const profession = window.location.hash.replace("#", "").split("?")[0];
-    
     const task = window.location.hash.replace("#", "").split("?")[1];
-    
     dynamo.query({
       TableName: "Specialists",
       IndexName: "profession",
@@ -113,7 +90,6 @@ const PageSpecialisten = (updateDate, /*{ date }*/) => {
       },
     }).promise()
       .then(data => {
-
         const convertedItems = data.Items.map(item => ({
           id: item.id,
           name: item.name,
@@ -130,16 +106,11 @@ const PageSpecialisten = (updateDate, /*{ date }*/) => {
                 '{"dates":["2024-03-31","2024-04-01","2024-04-02"]}'
                 console.log("Availability =", Availability);
         */
-
-
         for (let i: number = 0; i < convertedItems.length; i++) {
           if (convertedItems[i].availibility) {
             const Availability = JSON.parse(convertedItems[i].availibility);
-
             for (let x: number = 0; x < Availability.dates.length; x++) {
-
               const selected = JSON.stringify(updateDate).replace('T', '"').split('"')[3];
-
               if (selected == Availability.dates[x]) {
                 professionals = [...professionals, convertedItems[i]];
                 break;
@@ -148,16 +119,11 @@ const PageSpecialisten = (updateDate, /*{ date }*/) => {
           }
         }
         setSpecialists(/*convertedItems*/professionals);
-
-
       }).catch(err => {
         console.log(err);
       });
-  
   }, [updateDate]);
-
   return (
-
     <div className="filter-bar">
       <select value={location} onChange={handleLocationChange} className="filter-select">
         <option value="">Select a location</option>
@@ -191,5 +157,4 @@ const PageSpecialisten = (updateDate, /*{ date }*/) => {
     </div>
   );
 };
-
 export default PageSpecialisten;
