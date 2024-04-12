@@ -33,6 +33,8 @@ import DetailJobPage from "../pages/DetailJobPage/DetailJobPage";
 import MijnKlussenOverzichtPage from "../pages/MijnKlussenOverzichtPage/MijnKlussenOverzichtPage";
 import VSMijnklussen from "../pages/VakspecialistMijnKlussen/VSMijnklussen";
 import ConfirmDatePage from "../pages/ConfirmDatePage/ConfirmDatePage";
+import HomeOwnerSettingsPage from "../pages/HomeOwnerSettingsPage/HomeOwnerSettingsPage";
+import HomeOwnerNotification from "../components/HomeOwnerSettings/HomeOwnerNotification";
 import "./App.css";
 import ChatContactList from "../components/Chat/ChatContactList";
 
@@ -62,6 +64,8 @@ const App = () => {
       <Route path="/MijnKlussenOverzicht" element={<MijnKlussenOverzichtPage />} />
       <Route path="/OverOns" element={<OverOns />} />
       <Route path="/ConfirmDate" element={<ConfirmDatePage />} />
+      <Route path="/HomeOwnerSettingsPage" element={<HomeOwnerSettingsPage />} />
+      <Route path="/HomeOwnerNotification" element={<HomeOwnerNotification />} />
 
 
       <Route path="/VSMijnklussen" element={<VSMijnklussen />} />

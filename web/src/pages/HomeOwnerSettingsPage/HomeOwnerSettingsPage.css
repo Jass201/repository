@@ -1,0 +1,36 @@
+#main-con {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-right: 150px;
+}
+
+#sidebar-con {
+  display: flex;
+  align-items: flex-end;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar-con {
+  display: flex;
+  margin-right: 75px;
+}
+
+.settings-upper {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 25px 100px;
+}
+.settings-upper h3 {
+  font-size: 18px;
+}
+
+.settings-upper p {
+  font-size: 16px;
+}
