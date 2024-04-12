@@ -4,30 +4,36 @@ import SideNav from "../../components/ui/SideNav/SideNav";
 import Footer from "../../components/ui/Footer/Footer";
 import HomeOwnerSettings from "../../components/HomeOwnerSettings/HomeOwnerSettings";
 import HomeOwnerNotification from "../../components/HomeOwnerSettings/HomeOwnerNotification";
+import HomeOwnerSecurity from "../../components/HomeOwnerSettings/HomeOwnerSecurity";
 import "./HomeOwnerSettingsPage.css";
 
 function HomeOwnerSettingsPage() {
   return (
     <div>
       <NavBar />
-      <div id="main-con">
-        <div id="sidebar-con">
-          <div className="settings-upper">
-            <h3>Account Settingen</h3>
-            <p>Verander hier je account instellingen</p>
+      <div id="main-center">
+        <div id="main-con">
+          <div id="sidebar-con">
+            <div className="settings-upper">
+              <h3>Account Settingen</h3>
+              <p>Verander hier je account gegevens</p>
+            </div>
+            <div className="navbar-con">
+              <SideNav />
+            </div>
           </div>
-          <div className="navbar-con">
-            <SideNav />
+          <div id="content-con">
+            <section id="settings-con">
+              <HomeOwnerSettings />
+            </section>
+            <section id="notification-con">
+              <HomeOwnerNotification />
+            </section>
+            <section id="security-con">
+              <HomeOwnerSecurity />
+            </section>
           </div>
         </div>
-        <section id="settings-con">
-          <HomeOwnerSettings />
-        </section>
-        <section id="notification-con">
-          <HomeOwnerNotification />
-        </section>
-        <section id="security-con"></section>
-        <section id="deactivation-con"></section>
       </div>
       <Footer />
     </div>

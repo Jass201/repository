@@ -1,36 +1,55 @@
 #main-con {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  gap: 0px;
+  padding: 20px;
+  max-width: 1300px;
+}
+
+#main-center {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 20px;
-  padding-right: 150px;
+}
+
+#content-con {
+  display: flex;
+  width: 1000px;
+  padding: 60px 0px 10px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#settings-con {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  padding: 30px 0px 10px;
 }
 
 #sidebar-con {
-  display: flex;
-  align-items: flex-end;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
+  padding: 20px;
 }
 
 .navbar-con {
   display: flex;
-  margin-right: 75px;
+  margin-top: 20px;
 }
 
 .settings-upper {
-  display: flex;
-  flex-direction: column;
-  padding: 0px 0px 25px 100px;
-}
-.settings-upper h3 {
-  font-size: 18px;
+  margin-bottom: 20px; /* Provide some space between the title and SideNav */
 }
 
-.settings-upper p {
-  font-size: 16px;
+/* Ensure that each section fills the column and is not wider than the content area */
+section {
+  background: #fff; /* Background color for the content sections */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for the sections */
+  margin-bottom: 20px; /* Space between sections */
+}
+
+/* Make sure the button takes the full width of its container */
+.user-info-form button,
+.home-owner-settings button {
+  width: 100%;
+  /* ... other button styles */
 }

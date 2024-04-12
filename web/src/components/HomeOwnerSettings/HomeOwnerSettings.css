@@ -1,13 +1,3 @@
-#settings-con {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  margin: 110px 0px 30px 0px;
-  padding: 15px;
-}
-
-
-
 .settings {
   display: flex;
   flex-direction: column;

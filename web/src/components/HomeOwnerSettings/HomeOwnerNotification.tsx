@@ -13,10 +13,11 @@ function NotificationToggle({ title, enabled, onToggle }) {
   );
 }
 
-function NotificationCard({ title, options }) {
+function NotificationCard({ title, description, options }) {
   return (
     <div className="notification-card">
       <h2>{title}</h2>
+      <p className="notification-description">{description}</p>{" "}
       {options.map((option, index) => (
         <NotificationToggle
           key={index}
@@ -78,9 +79,23 @@ function HomeOwnerNotification() {
 
   return (
     <div>
-      <div className="notification-settings">
-        <NotificationCard title="Email notificaties" options={emailOptions} />
-        <NotificationCard title="Push notificaties" options={pushOptions} />
+      <div className="notification-con">
+        <div className="notification-header">
+          <p>Algemene Info</p>
+        </div>
+        <div className="notification-settings">
+          <NotificationCard
+            title="Email notificaties"
+            description="Wijzig hier je email notificaties om op de hoogte te blijven van nieuwe vakspecialisten. U kunt dit altijd uitzetten."
+            options={emailOptions}
+          />
+          <article></article>
+          <NotificationCard
+            title="Push notificaties"
+            description="Wijzig hier je Push notificaties om op de hoogte te blijven van nieuwe reacties op je klussen. U kunt dit altijd uitzetten."
+            options={pushOptions}
+          />
+        </div>
       </div>
     </div>
   );
