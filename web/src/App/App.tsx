@@ -37,6 +37,7 @@ import HomeOwnerSettingsPage from "../pages/HomeOwnerSettingsPage/HomeOwnerSetti
 import HomeOwnerNotification from "../components/HomeOwnerSettings/HomeOwnerNotification";
 import HomeOwnerSecurity from "../components/HomeOwnerSettings/HomeOwnerSecurity";
 import HomeOwnerDeactivation from "../components/HomeOwnerSettings/HomeOwnerDeactivation";
+import FAQPage from "../pages/FAQPage/FAQpage";
 import "./App.css";
 import ChatContactList from "../components/Chat/ChatContactList";
 
@@ -70,6 +71,7 @@ const App = () => {
       <Route path="/HomeOwnerNotification" element={<HomeOwnerNotification />} />
       <Route path="/HomeOwnerSecurity" element={<HomeOwnerSecurity />} />
       <Route path="/HomeOwnerDeactivation" element={<HomeOwnerDeactivation />} />
+      <Route path="/FAQPage" element={<FAQPage />} />
 
 
       <Route path="/VSMijnklussen" element={<VSMijnklussen />} />
