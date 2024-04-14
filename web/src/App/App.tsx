@@ -36,6 +36,7 @@ import ConfirmDatePage from "../pages/ConfirmDatePage/ConfirmDatePage";
 import HomeOwnerSettingsPage from "../pages/HomeOwnerSettingsPage/HomeOwnerSettingsPage";
 import HomeOwnerNotification from "../components/HomeOwnerSettings/HomeOwnerNotification";
 import HomeOwnerSecurity from "../components/HomeOwnerSettings/HomeOwnerSecurity";
+import HomeOwnerDeactivation from "../components/HomeOwnerSettings/HomeOwnerDeactivation";
 import "./App.css";
 import ChatContactList from "../components/Chat/ChatContactList";
 
@@ -68,6 +69,7 @@ const App = () => {
       <Route path="/HomeOwnerSettingsPage" element={<HomeOwnerSettingsPage />} />
       <Route path="/HomeOwnerNotification" element={<HomeOwnerNotification />} />
       <Route path="/HomeOwnerSecurity" element={<HomeOwnerSecurity />} />
+      <Route path="/HomeOwnerDeactivation" element={<HomeOwnerDeactivation />} />
 
 
       <Route path="/VSMijnklussen" element={<VSMijnklussen />} />

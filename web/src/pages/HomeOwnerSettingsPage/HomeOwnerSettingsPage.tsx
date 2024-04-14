@@ -5,6 +5,7 @@ import Footer from "../../components/ui/Footer/Footer";
 import HomeOwnerSettings from "../../components/HomeOwnerSettings/HomeOwnerSettings";
 import HomeOwnerNotification from "../../components/HomeOwnerSettings/HomeOwnerNotification";
 import HomeOwnerSecurity from "../../components/HomeOwnerSettings/HomeOwnerSecurity";
+import HomeOwnerDeactivation from "../../components/HomeOwnerSettings/HomeOwnerDeactivation";
 import "./HomeOwnerSettingsPage.css";
 
 function HomeOwnerSettingsPage() {
@@ -31,6 +32,9 @@ function HomeOwnerSettingsPage() {
             </section>
             <section id="security-con">
               <HomeOwnerSecurity />
+            </section>
+            <section id="deactivation-con">
+              <HomeOwnerDeactivation />
             </section>
           </div>
         </div>
