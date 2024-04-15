@@ -12,7 +12,7 @@ function FAQPage() {
         <div className="nav-con">
           <SideNav />
         </div>
-        <div className="faq-con"> {/* Apply the class here */}
+        <div className="faq-con">
           <FAQ />
         </div>
       </div>

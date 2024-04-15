@@ -31,7 +31,6 @@ import SpecialistProfile from "../pages/SpecialistProfilePage/SpecialistProfile"
 import EditProfile from "../pages/EditProfilePage/EditProfile";
 import DetailJobPage from "../pages/DetailJobPage/DetailJobPage";
 import MijnKlussenOverzichtPage from "../pages/MijnKlussenOverzichtPage/MijnKlussenOverzichtPage";
-import VSMijnklussen from "../pages/VakspecialistMijnKlussen/VSMijnklussen";
 import ConfirmDatePage from "../pages/ConfirmDatePage/ConfirmDatePage";
 import HomeOwnerSettingsPage from "../pages/HomeOwnerSettingsPage/HomeOwnerSettingsPage";
 import HomeOwnerNotification from "../components/HomeOwnerSettings/HomeOwnerNotification";
@@ -74,7 +73,6 @@ const App = () => {
       <Route path="/FAQPage" element={<FAQPage />} />
 
 
-      <Route path="/VSMijnklussen" element={<VSMijnklussen />} />
 
       <Route path="/login" element={<LoginPage />} />
       <Route path="/registreer" element={<RegisterPage />} />
